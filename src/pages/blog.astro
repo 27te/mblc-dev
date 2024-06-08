@@ -2,18 +2,28 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BlogPost from '../components/BlogPost.astro';
+import Panda from '../components/Panda.astro';
+import SectionTitle from '../components/SectionTitle.astro';
 
 const pageTitle = 'My Astro Learning Blog';
 const allPosts = await getCollection('posts');
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <p>Aquí es donde voy a publicar sobre mi viaje de aprendizaje con Astro.</p>
-  <ul>
+  <div>
+    <Panda />
+  </div>
+  <SectionTitle nameSection='Posts' />
+  <section class='grid grid-cols-2 gap-4 justify-center items-start mt-5'>
     {
       allPosts.map((post) => (
-        <BlogPost url={`/posts/${post.slug}/`} title={post.data.title} />
+        <BlogPost
+          url={`/posts/${post.slug}/`}
+          title={post.data.title}
+          img={post.data.image.url}
+          alt={post.data.image.alt}
+        />
       ))
     }
-  </ul>
+  </section>
 </BaseLayout>

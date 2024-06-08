@@ -1,13 +1,16 @@
 ---
 import Navigation from './Navigation.astro';
-import ThemeIcon from './ThemeIcon.astro';
-import Menu from './Menu.astro';
 ---
 
-<header>
-  <nav>
-    <Menu />
-    <ThemeIcon />
-    <Navigation />
-  </nav>
+<header class='bg-transparent sticky top-0 z-10 backdrop-blur-3xl py-3'>
+  <div
+    class='max-w-[60ch] container mx-auto flex justify-between items-center text-white'
+  >
+    <div class=''>
+      <span class='text-3xl font-semibold'>MBLC</span>
+    </div>
+    <nav>
+      <Navigation />
+    </nav>
+  </div>
 </header>

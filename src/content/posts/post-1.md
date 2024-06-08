@@ -1,44 +1,65 @@
 ---
-title: 'Mi primera publicación en el blog'
-pubDate: 2022-07-01
-description: 'Este es la primera publicación de mi nuevo blog Astro.'
-author: 'Alumno de Astro'
+title: 'Como crear un componente en React'
+pubDate: 2024-06-08
+description: 'Una guía paso a paso para crear componentes reutilizables en React.'
+author: 'Desarrollador React'
 image:
-    url: 'https://docs.astro.build/assets/full-logo-dark.png'
-    alt: 'El logotipo completo de Astro.'
-tags: ["astro", "bloguear", "aprender en público"]
+    url: 'https://reactjs.org/logo-og.png'
+    alt: 'Logotipo de React.'
+tags: ["react", "componentes", "javascript"]
 ---
-# Mi primera publicación en el blog
 
-¡Bienvenido a mi _nuevo blog_ sobre el aprendizaje de Astro! Aquí, voy a compartir mi viaje de aprendizaje a medida que construyo un nuevo sitio web.
+Los componentes son la base de cualquier aplicación de React. En esta guía, aprenderás cómo crear un componente sencillo y reutilizable en React.
 
-## Lo que he conseguido
+## Paso 1: Configura tu proyecto
 
-1. **Instalación de Astro**: En primer lugar, he creado un nuevo proyecto Astro y configurar mis cuentas en línea.
-
-2. **Creación de páginas**: Luego aprendí cómo hacer páginas creando nuevos archivos `.astro` y colocándolos en la carpeta `src/pages/`.
-
-3. **Creación de publicaciones**: ¡Esta es mi primera publicación! ¡Ahora tengo páginas de Astro y publicaciónes en Markdown!
-
-## Próximos pasos
-
-Terminaré el tutorial de Astro, y luego seguiré añadiendo más publicaciones. Mira este espacio para más por venir.
-
-```javascript
-// print hello world in javascript
-console.log('Hello world!!!')
-
-```
-# bash
+Primero, asegúrate de tener Node.js y npm instalados. Luego, crea un nuevo proyecto de React:
 
 ```bash
-npm create astro@latest
+npx create-react-app mi-componente
+cd mi-componente
+npm start
 ```
 
-# php
+## Paso 2: Crea el componente
 
-```php
-<?php
-echo "Hello world"
-?>
+Dentro de la carpeta `src`, crea un nuevo archivo llamado `MiComponente.js`:
+
+```jsx
+import React from 'react';
+
+const MiComponente = () => {
+  return (
+    <div>
+      <h1>Hola, soy un componente!</h1>
+    </div>
+  );
+}
+
+export default MiComponente;
 ```
+
+## Paso 3: Usa el componente
+
+Ahora, importa y usa tu componente en `App.js`:
+
+```jsx
+import React from 'react';
+import MiComponente from './MiComponente';
+
+function App() {
+  return (
+    <div className="App">
+      <MiComponente />
+    </div>
+  );
+}
+
+export default App;
+```
+
+## Paso 4: Ejecuta tu aplicación
+
+Ejecuta tu aplicación con `npm start` y deberías ver tu nuevo componente en el navegador.
+
+¡Felicidades! Has creado tu primer componente en React.

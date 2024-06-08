@@ -1,7 +1,21 @@
 ---
-const { url, title } = Astro.props;
+const { url, title, img, alt } = Astro.props;
 ---
 
-<li>
-  <a href={url}>{title}</a>
-</li>
+<article>
+  <div
+    class='w-full shadow-md shadow-gray-700/20 h-full rounded-md overflow-hidden'
+  >
+    <a href={url}>
+      <img
+        src={img}
+        alt={alt}
+        class='w-full h-40 object-cover'
+        transition:name={`img-${img}`}
+      />
+    </a>
+  </div>
+  <div class='mt-3 w-full text-center'>
+    <a href={url} class='text-white font-medium hover:text-sky-600'>{title}</a>
+  </div>
+</article>

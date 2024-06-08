@@ -1,0 +1,43 @@
+---
+import Instagram from './icons/Instagram.astro';
+import Linkedin from './icons/Linkedin.astro';
+import Github from './icons/Github.astro';
+import SectionTitle from './SectionTitle.astro';
+---
+
+<section class='mt-5'>
+  <SectionTitle nameSection='Mis redes' />
+  <div class='mt-5'>
+    <div class='flex flex-col'>
+      <div class='flex items-center rounded-md'>
+        <a
+          href='/'
+          class='text-[#53EA6C] font-medium hover:bg-green-500/10 h-12 px-4 cursor-pointer flex items-center rounded-md transition-all duration-200 ease-linear'
+        >
+          <Linkedin />
+          <span class='ml-2'>Linkedin</span>
+        </a>
+      </div>
+
+      <div class='flex items-center'>
+        <a
+          href='/'
+          class='text-[#53EA6C] font-medium hover:bg-green-500/10 h-12 px-4 cursor-pointer rounded-md flex items-center transition-all duration-200 ease-linear'
+        >
+          <Instagram />
+          <span class='ml-2'>Instagram</span>
+        </a>
+      </div>
+
+      <div class='flex items-center'>
+        <a
+          href='/'
+          class='text-[#53EA6C] font-medium hover:bg-green-500/10 h-12 px-4 cursor-pointer rounded-md flex items-center transition-all duration-200 ease-linear'
+        >
+          <Github />
+          <span class='ml-2'>Github</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

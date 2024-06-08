@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogPost from '../../components/BlogPost.astro';
+import SectionTitle from '@/components/SectionTitle.astro';
 
 export async function getStaticPaths() {
   const allPosts = await getCollection('posts');
@@ -25,12 +26,19 @@ const { posts } = Astro.props;
 ---
 
 <BaseLayout pageTitle={tag}>
-  <p>Artículos con la etiqueta {tag}</p>
-  <ul>
+  <div class='mt-5'>
+    <SectionTitle nameSection={tag} />
+  </div>
+  <section class='grid grid-cols-2 gap-4 justify-center items-start mt-5'>
     {
       posts.map((post) => (
-        <BlogPost url={`/posts/${post.slug}/`} title={post.data.title} />
+        <BlogPost
+          url={`/posts/${post.slug}/`}
+          title={post.data.title}
+          img={post.data.image.url}
+          alt={post.data.image.alt}
+        />
       ))
     }
-  </ul>
+  </section>
 </BaseLayout>
