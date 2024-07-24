@@ -1,5 +1,4 @@
 ---
-import Panda from '@/components/Panda.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BlogPost from '../components/BlogPost.astro';
 import SectionTitle from '../components/SectionTitle.astro';
@@ -7,8 +6,10 @@ import { getCollection } from 'astro:content';
 const allPosts = await getCollection('posts');
 ---
 
-<BaseLayout pageTitle='Trabajos'>
-  <Panda />
+<BaseLayout
+  title='mblcdev | Trabajos'
+  description='Explora mis trabajos y descubre mis proyectos y experiencias como desarrollador web freelance. Desde soluciones a medida hasta innovaciones digitales, cada trabajo refleja mi compromiso con la calidad y la creatividad en el desarrollo web.'
+>
   <SectionTitle nameSection='Trabajos' />
   <section class='grid grid-cols-2 gap-4 justify-center items-start mt-5'>
     {

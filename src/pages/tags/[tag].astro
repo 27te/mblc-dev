@@ -23,9 +23,12 @@ export async function getStaticPaths() {
 
 const { tag } = Astro.params;
 const { posts } = Astro.props;
+
+const pageTitle = `Etiqueta: ${tag}`;
+const pageDescription = `Todos los posts con la etiqueta ${tag}`;
 ---
 
-<BaseLayout pageTitle={tag}>
+<BaseLayout title={pageTitle} description={pageDescription}>
   <div class='mt-5'>
     <SectionTitle nameSection={tag} />
   </div>

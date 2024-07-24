@@ -4,10 +4,14 @@ import Hero from '@/components/Hero.astro';
 import About from '@/components/About.astro';
 import Experience from '@/components/Experience.astro';
 import Links from '@/components/Links.astro';
-const pageTitle = 'MBLCDEV | Desarrollador web Freelance';
+const pageTitle =
+  'mblcdev – Desarrollador Web Freelance | Creación de Sitios Web a Medida';
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout
+  title={pageTitle}
+  description='Desarrollador web freelancer con experiencia en el desarrollo de páginas web y sistemas de administración.'
+>
   <Hero />
   <About />
   <Experience />

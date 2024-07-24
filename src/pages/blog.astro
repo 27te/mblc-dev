@@ -2,17 +2,16 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BlogPost from '../components/BlogPost.astro';
-import Panda from '../components/Panda.astro';
 import SectionTitle from '../components/SectionTitle.astro';
 
-const pageTitle = 'My Astro Learning Blog';
+const pageTitle = 'mblcdev | Mi Blog';
 const allPosts = await getCollection('posts');
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-  <div>
-    <Panda />
-  </div>
+<BaseLayout
+  title={pageTitle}
+  description='Bienvenido a mi blog donde encontraras mas información sobre el desarrollo de páginas web, sistemas de administración, programación y mucho mas.'
+>
   <SectionTitle nameSection='Posts' />
   <section class='grid grid-cols-2 gap-4 justify-center items-start mt-5'>
     {
