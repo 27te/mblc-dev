@@ -13,7 +13,9 @@ const allPosts = await getCollection('posts');
   description='Bienvenido a mi blog donde encontraras mas información sobre el desarrollo de páginas web, sistemas de administración, programación y mucho mas.'
 >
   <SectionTitle nameSection='Posts' />
-  <section class='grid grid-cols-2 gap-4 justify-center items-start mt-5'>
+  <section
+    class='grid grid-cols-1 md:grid-cols-2 gap-4 justify-center items-start mt-5'
+  >
     {
       allPosts.map((post) => (
         <BlogPost

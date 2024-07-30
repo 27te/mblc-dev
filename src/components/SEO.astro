@@ -4,11 +4,16 @@ interface Props {
   description: string;
 }
 const { title, description } = Astro.props;
-const img = '/mblc.avif';
 ---
 
 <meta charset='utf-8' />
-<link rel='icon' type='image/svg+xml' href='/mblc.avif' />
+<link
+  rel='icon'
+  href='/icons/mblcdev-dark-144x144.png'
+  type='image/x-icon'
+  id='favicon'
+/>
+<link rel='manifest' href='/manifest.webmanifest' />
 <meta name='viewport' content='width=device-width' />
 <link rel='sitemap' href='/sitemap-index.xml' />
 <title>{title}</title>
@@ -23,12 +28,42 @@ const img = '/mblc.avif';
 <meta property='og:url' content={Astro.url} />
 <meta property='og:title' content={title} />
 <meta property='og:description' content={description} />
-<meta property='og:image' content={img} />
+<meta property='og:image' content='/icons/mblcdev-light-144x144.png' />
 <meta name='robots' content='index, follow' />
 <meta name='googlebot' content='index, follow' />
-<link rel='apple-touch-icon' href='/mblc.avif' />
+<link rel='apple-touch-icon' href='/icons/mblcdev-dark-144x144.png' />
+<meta name='theme-color' content='#ffffff' />
 <meta property='twitter:card' content='summary_large_image' />
 <meta property='twitter:url' content={Astro.url} />
 <meta property='twitter:title' content={title} />
 <meta property='twitter:description' content={description} />
-<meta property='twitter:image' content={img} />
+<meta property='twitter:image' content='/icons/mblcdev-light-144x144.png' />
+<script is:inline>
+  document.addEventListener('astro:page-load', () => {
+    function setFavicon(mode) {
+      const favicon = document.getElementById('favicon');
+      if (mode === 'dark') {
+        favicon.href = '/icons/mblcdev-light-144x144.png';
+      } else {
+        favicon.href = '/icons/mblcdev-dark-144x144.png';
+      }
+    }
+    function detectColorScheme() {
+      if (
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      ) {
+        setFavicon('dark');
+      } else {
+        setFavicon('light');
+      }
+    }
+    window
+      .matchMedia('(prefers-color-scheme: dark)')
+      .addEventListener('change', (e) => {
+        const newColorScheme = e.matches ? 'dark' : 'light';
+        setFavicon(newColorScheme);
+      });
+    document.addEventListener('DOMContentLoaded', detectColorScheme);
+  });
+</script>

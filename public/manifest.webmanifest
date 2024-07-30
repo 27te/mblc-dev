@@ -1,0 +1,22 @@
+{
+  "name": "Mblcdev",
+  "short_name": "Mblcdev",
+  "description": "Desarrollador web freelancer con experiencia en el desarrollo de páginas web y sistemas de administración.",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "fullscreen",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/icons/mblcdev-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/mblcdev-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
