@@ -4,7 +4,7 @@ pubDate: 2024-06-08
 description: 'Personaliza tu editor de texto Neovim para mejorar tu productividad.'
 author: 'Entusiasta de Neovim'
 image:
-    url: 'https://neovim.io/logos/neovim-mark-flat.png'
+    url: '/img/nvim.webp'
     alt: 'Logotipo de Neovim.'
 tags: ["neovim", "configuración", "editor de texto", "productividad"]
 ---

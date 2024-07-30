@@ -4,7 +4,7 @@ pubDate: 2024-06-08
 description: 'Aprende a configurar rutas y navegación en una aplicación React usando React Router.'
 author: 'Desarrollador Frontend'
 image:
-    url: 'https://media.dev.to/cdn-cgi/image/width=1600,height=900,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fbohilxedfl6ijlltfyeq.png'
+    url: '/img/react-router-dom.webp'
     alt: 'Logotipo de React Router.'
 tags: ["react", "react router", "navegación", "javascript"]
 ---

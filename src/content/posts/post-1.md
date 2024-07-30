@@ -4,7 +4,7 @@ pubDate: 2024-06-08
 description: 'Una guía paso a paso para crear componentes reutilizables en React.'
 author: 'Desarrollador React'
 image:
-    url: 'https://reactjs.org/logo-og.png'
+    url: '/img/react-logo.webp'
     alt: 'Logotipo de React.'
 tags: ["react", "componentes", "javascript"]
 ---

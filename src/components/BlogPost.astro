@@ -12,6 +12,8 @@ const { url, title, img, alt } = Astro.props;
         alt={alt}
         class='w-full h-40 object-cover'
         transition:name={`img-${img}`}
+        loading='lazy'
+        decoding='async'
       />
     </a>
   </div>

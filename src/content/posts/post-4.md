@@ -4,7 +4,7 @@ pubDate: 2024-06-08
 description: 'Guía para añadir autenticación a tu aplicación React usando Firebase.'
 author: 'Desarrollador Full Stack'
 image:
-  url: 'https://firebase.google.com/downloads/brand-guidelines/PNG/logo-logomark.png'
+  url: '/img/firebase.webp'
   alt: 'Logotipo de Firebase.'
 tags: ["react", "firebase", "autenticación", "javascript"]
 ---
