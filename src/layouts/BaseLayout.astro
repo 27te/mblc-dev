@@ -18,6 +18,10 @@ const { title, description } = Astro.props;
   </head>
   <body class='bg-[#18181b]'>
     <Header />
+    <div class="bg-blue-600 text-white text-center p-4 fixed w-full top-0 z-50">
+      <p class="text-lg font-semibold">¡Pronto una nueva versión!</p>
+      <p class="text-sm">Estamos trabajando en algo increíble. Mantente atento.</p>
+    </div>
     <main class='container mx-auto max-w-[60ch] px-3 md:px-0'>
       <slot />
     </main>
