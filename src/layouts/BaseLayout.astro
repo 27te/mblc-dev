@@ -18,13 +18,45 @@ const { title, description } = Astro.props;
   </head>
   <body class='bg-[#18181b]'>
     <Header />
-    <div class="bg-blue-600 text-white text-center p-4 fixed w-full top-0 z-50">
-      <p class="text-lg font-semibold">¡Pronto una nueva versión!</p>
+      <div id="aviso" class="bg-blue-600 text-white text-center flex items-center justify-center p-4 fixed bottom-0 w-full transition-all duration-500 ease-in-out"
+       style="height: 100px;">
+    <div>
+      <h1 class="text-lg font-bold">¡Pronto una nueva versión!</h1>
       <p class="text-sm">Estamos trabajando en algo increíble. Mantente atento.</p>
     </div>
+  </div>
+
+ 
     <main class='container mx-auto max-w-[60ch] px-3 md:px-0'>
       <slot />
     </main>
     <Footer />
   </body>
 </html>
+ <script is:inline>
+    // Tamaño inicial y final del aviso
+    let alturaInicial = 100; // px
+    let alturaFinal = window.innerHeight; // Alto total de la pantalla
+
+    // Tiempo total para alcanzar el alto completo (en semanas)
+    const tiempoEnSemanas = 2;
+    const milisegundosPorDia = 1000 * 60 * 60 * 24;
+    const diasPorSemana = 7;
+    const incrementoDiario = (alturaFinal - alturaInicial) / (tiempoEnSemanas * diasPorSemana);
+
+    // Función para incrementar la altura gradualmente
+    function incrementarAltura() {
+      const aviso = document.getElementById('aviso');
+      let alturaActual = parseFloat(aviso.style.height);
+
+      if (alturaActual < alturaFinal) {
+        aviso.style.height = `${alturaActual + incrementoDiario}px`;
+      } else {
+        // Detenemos el crecimiento una vez alcanzada la altura completa
+        clearInterval(intervalo);
+      }
+    }
+
+    // Ejecutar el crecimiento cada día
+    const intervalo = setInterval(incrementarAltura, milisegundosPorDia);
+  </script>
