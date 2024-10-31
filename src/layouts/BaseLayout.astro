@@ -1,7 +1,4 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import SEO from '@/components/SEO.astro';
 
 interface Props {
@@ -14,26 +11,20 @@ const { title, description } = Astro.props;
 <html lang='es'>
   <head>
     <SEO title={title} description={description} />
-    <ViewTransitions />
   </head>
-  <body class='bg-[#18181b]'>
-    <Header />
-    <div
-      id='aviso'
-      class='bg-blue-600 text-white text-center flex items-center justify-center p-4 fixed bottom-0 w-full transition-all duration-500 ease-in-out z-50'
-      style='height: 100vh;'
-    >
-      <div>
-        <h1 class='text-lg font-bold'>¡Pronto una nueva versión!</h1>
-        <p class='text-sm'>
-          Estamos trabajando en algo increíble. Mantente atento.
-        </p>
+  <body class='bg-black'>
+    <main class='px-3 md:px-0 relative'>
+      <div
+        class='absolute inset-0 -z-10 h-full w-full flex justify-center items-center'
+      >
+        <div
+          class='absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_500px,#F0AF2135,transparent)]'
+        >
+        </div>
       </div>
-    </div>
-
-    <main class='container mx-auto max-w-[60ch] px-3 md:px-0'>
-      <slot />
+      <div class='container mx-auto'>
+        <slot />
+      </div>
     </main>
-    <Footer />
   </body>
 </html>
