@@ -1,30 +1,54 @@
-<div class='min-h-screen flex justify-center items-center flex-col'>
+---
+const fecha = new Date();
+const hora = fecha.getHours();
+---
+
+<div class='h-[calc(20px+100vh)] flex justify-center items-center flex-col'>
+  <div class='gradient-border inline-block p-[1px] rounded-full mb-5'>
+    <div
+      class='bg-black/10 border border-white/10 px-6 py-2 rounded-full flex justify-center items-center gap-2'
+    >
+      <div
+        class={`size-2  border-none rounded-full ${hora < 20 && hora > 4 ? 'bg-green-500' : 'bg-red-500'}`}
+      >
+      </div>
+      <span class='text-sm text-white'> Desarrollo Web</span>
+    </div>
+  </div>
   <div>
     <h1
-      class='text-center text-black dark:text-white text-5xl font-bold leading-tight'
+      class='text-center text-black dark:text-white text-5xl font-black leading-tight font-satoshi-bold'
     >
-      Haz crecer tu marca con <div
-        class='bg-[#F0AF21] uppercase inline-block mt-5 py-2 px-2 shadow shadow-[#F0AF21] hover:scale-105 transition-transform duration-300 ease-in-out -rotate-6'
+      Haz crecer tu marca con
+      <span
+        class='bg-gradient-to-b from-zinc-100 to-zinc-400 bg-clip-text text-transparent uppercase'
       >
-        <span> mblcdev </span>
-      </div>
+        mblcdev
+      </span>
     </h1>
-    <p class='text-black dark:text-white mt-10 text-center'>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi vero,
-      voluptates consectetur eveniet sed dolorem aliquam exercitationem vitae,
-      nam numquam ea maxime velit eaque aliquid dolor mollitia nulla atque quos!
+    <p
+      class='text-zinc-950 text-[19.16px] dark:text-zinc-300 mt-10 text-center'
+    >
+      Transformamos ideas en experiencias digitales excepcionales con un
+      <span class='font-semibold text-white'
+        >enfoque moderno y minimalista.</span
+      >
     </p>
   </div>
   <div class='mt-20 flex justify-center items-center gap-5'>
     <button
-      class='bg-[#F0AF21] h-12 px-2 rounded-md border-none font-semibold text-black'
+      class='bg-zinc-100 h-12 px-4 rounded-md border-none font-semibold text-black text-base'
+      data-cal-link='mblcdev/15min'
+      data-cal-namespace='15min'
+      data-cal-config='{"layout":"month_view"}'
     >
       Agenda una reuinón</button
     >
-    <button
-      class='text-black dark:text-white border border-[#333333] rounded-md h-12 px-2 font-semibold'
+    <a
+      href='/links'
+      class='text-black dark:text-white border border-zinc-800 rounded-md h-12 px-4 font-semibold flex justify-center items-center'
     >
-      Ver productos</button
-    >
+      Contáctanos
+    </a>
   </div>
 </div>
