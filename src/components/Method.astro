@@ -1,0 +1,97 @@
+---
+import MethodologyStep from '@/components/ui/MethodologyStep.astro';
+---
+
+<section class='methodology relative mt-20'>
+  <div class='text-center mb-20 space-y-4 py-5'>
+    <h2 class='text-4xl font-bold tracking-tight'>
+      <span
+        class='bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent'
+      >
+        Nuestra Metodología
+      </span>
+    </h2>
+    <p class='text-zinc-400 max-w-2xl mx-auto'>
+      Un proceso refinado para convertir ideas en realidades digitales
+      excepcionales
+    </p>
+  </div>
+  <div class='timeline'>
+    <div class='line'></div>
+    <div class='steps'>
+      <MethodologyStep
+        title='Planificación'
+        description='Analizamos a fondo tus objetivos y creamos una hoja de ruta clara para el éxito de tu proyecto digital.'
+        number='01'
+        position='left'
+      />
+      <MethodologyStep
+        title='Diseño'
+        description='Transformamos conceptos en interfaces cautivadoras que conectan con tus usuarios y elevan tu marca.'
+        number='02'
+        position='right'
+      />
+      <MethodologyStep
+        title='Desarrollo'
+        description='Construimos tu proyecto con las últimas tecnologías y metodologías ágiles para garantizar calidad y eficiencia.'
+        number='03'
+        position='left'
+      />
+      <MethodologyStep
+        title='Lanzamiento & Optimización'
+        description='Pulimos cada detalle y optimizamos el rendimiento para un lanzamiento impecable y resultados excepcionales.'
+        number='04'
+        position='right'
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .timeline {
+    position: relative;
+    padding: 2rem 0;
+  }
+
+  .line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(
+      to bottom,
+      rgb(39, 39, 42),
+      rgba(39, 39, 42, 0.5),
+      transparent
+    );
+    transform: translateX(-50%);
+  }
+
+  .steps {
+    display: grid;
+    gap: 6rem;
+  }
+
+  @media (min-width: 768px) {
+    .steps {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4rem;
+      row-gap: 8rem;
+    }
+
+    .methodology-step.right {
+      grid-column-start: 2;
+    }
+
+    .methodology-step.left {
+      grid-column-start: 1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .line {
+      display: none;
+    }
+  }
+</style>

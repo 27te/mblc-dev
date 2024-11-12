@@ -1,0 +1,148 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  number: string;
+  position: 'left' | 'right';
+}
+
+const { title, description, number, position } = Astro.props;
+---
+
+<div class={`methodology-step ${position}`}>
+  <div class='content group'>
+    <div class='card'>
+      <span class='number'>{number}</span>
+      <div class='glow'></div>
+      <h3 class='text-2xl font-semibold mb-3 text-white'>{title}</h3>
+      <p class='text-base'>{description}</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .methodology-step {
+    width: 100%;
+    padding: 0 2rem;
+    opacity: 0;
+    animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .content {
+    position: relative;
+    perspective: 1000px;
+  }
+
+  .card {
+    position: relative;
+    padding: 2rem;
+    border: 1px solid rgba(161, 161, 170, 0.05);
+    border-radius: 1rem;
+    background: linear-gradient(
+      135deg,
+      rgba(24, 24, 27, 0.9),
+      rgba(9, 9, 11, 0.9)
+    );
+    backdrop-filter: blur(16px);
+    transition: all 0.5s;
+    transform-style: preserve-3d;
+  }
+
+  .content:hover .card {
+    transform: rotateY(3deg) rotateX(3deg);
+    box-shadow: 0 0 30px -5px rgba(255, 255, 255, 0.1);
+  }
+
+  .glow {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.5s;
+    background: linear-gradient(90deg, rgba(148, 148, 148, 0.07), transparent);
+    border-radius: 1rem;
+    pointer-events: none;
+  }
+
+  .content:hover .glow {
+    opacity: 1;
+  }
+
+  .number {
+    position: absolute;
+    top: -2.5rem;
+    font-size: 6rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.03);
+    transition: all 0.5s;
+    letter-spacing: -0.05em;
+    font-family: 'Satoshi-Medium', sans-serif;
+  }
+
+  .content:hover .number {
+    color: rgba(255, 255, 255, 0.07);
+    transform: translateY(-0.5rem);
+  }
+
+  .left .number {
+    right: 1rem;
+  }
+
+  .right .number {
+    left: 1rem;
+  }
+
+  h3 {
+    margin-bottom: 1rem;
+    color: white;
+    letter-spacing: -0.025em;
+    position: relative;
+    z-index: 10;
+    transition: transform 0.5s;
+  }
+
+  .content:hover h3 {
+    transform: translateY(-0.25rem);
+  }
+
+  p {
+    color: rgb(161, 161, 170);
+    line-height: 1.7;
+    position: relative;
+    z-index: 10;
+    transition: all 0.5s;
+  }
+
+  .content:hover p {
+    color: rgb(212, 212, 216);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .methodology-step {
+      padding: 0 1rem;
+    }
+
+    .card {
+      padding: 1.5rem;
+    }
+
+    .number {
+      font-size: 3rem;
+      top: -2rem;
+    }
+
+    h3 {
+      margin-bottom: 0.75rem;
+    }
+  }
+</style>

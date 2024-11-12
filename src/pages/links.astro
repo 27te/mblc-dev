@@ -1,0 +1,65 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+const links = [
+  { name: 'GitHub', url: 'https://github.com/mblcdev' },
+  { name: 'Twitter', url: 'https://twitter.com/mblc_dev' },
+  { name: 'LinkedIn', url: 'https://linkedin.com/company/mblcdev' },
+  { name: 'Instagram', url: 'https://instagram.com/mblc.dev' },
+];
+---
+
+<BaseLayout
+  title='Redes Sociales | mblcdev'
+  description='Una colección de mis perfiles en redes sociales. Conéctate conmigo en GitHub, Twitter, LinkedIn e Instagram.'
+>
+  <div class='h-screen flex justify-center items-center container mx-auto'>
+    <div class='flex flex-col gap-5'>
+      <img src='/logo.png' alt='logo' class='w-40' />
+      <h1
+        class='text-xl font-bold mb-6 bg-white/10 rounded-full text-center text-white py-1'
+      >
+        @mblcdev
+      </h1>
+      <ul>
+        {
+          links.map((link) => (
+            <li class='mb-4 bg-white/5 py-2 text-base rounded-md'>
+              <a
+                href={link.url}
+                class='text-zinc-400 hover:text-white flex justify-between items-center gap-2 px-5 cursor-pointer'
+              >
+                {link.name}
+                <span>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='20'
+                    height='20'
+                    viewBox='0 0 24 24'
+                  >
+                    <path
+                      fill='none'
+                      stroke='currentColor'
+                      stroke-dasharray='28'
+                      stroke-dashoffset='28'
+                      stroke-linecap='round'
+                      stroke-linejoin='round'
+                      stroke-width='2'
+                      d='M13 6l2 -2c1 -1 3 -1 4 0l1 1c1 1 1 3 0 4l-5 5c-1 1 -3 1 -4 0M11 18l-2 2c-1 1 -3 1 -4 0l-1 -1c-1 -1 -1 -3 0 -4l5 -5c1 -1 3 -1 4 0'
+                    >
+                      <animate
+                        fill='freeze'
+                        attributeName='stroke-dashoffset'
+                        dur='0.6s'
+                        values='28;0'
+                      />
+                    </path>
+                  </svg>
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</BaseLayout>

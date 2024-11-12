@@ -1,0 +1,96 @@
+---
+interface Service {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+const services: Service[] = [
+  {
+    title: 'Diseño Web',
+    description:
+      'Creamos diseños modernos y atractivos que cautivan a tus usuarios',
+    icon: '💎',
+  },
+  {
+    title: 'Desarrollo Frontend',
+    description:
+      'Construimos interfaces fluidas y responsivas con las últimas tecnologías',
+    icon: '🚀',
+  },
+  {
+    title: 'Desarrollo Backend',
+    description:
+      'Implementamos soluciones robustas y escalables para tu negocio',
+    icon: '⚡',
+  },
+  {
+    title: 'SEO',
+    description:
+      'Optimizamos tu sitio para maximizar su visibilidad en buscadores',
+    icon: '🎯',
+  },
+];
+---
+
+<section class='services-section px-4 scroll-m-20' id='services'>
+  <div class='max-w-6xl mx-auto'>
+    <div class='text-center mb-20 space-y-4'>
+      <h2 class='text-4xl font-bold tracking-tight'>
+        <span
+          class='bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent'
+        >
+          Nuestros Servicios
+        </span>
+      </h2>
+      <p class='text-zinc-400 max-w-2xl mx-auto'>
+        Ofrecemos una amplia gama de servicios para ayudarte a alcanzar tus
+        objetivos
+      </p>
+    </div>
+    <div class='grid grid-cols-1 md:grid-cols-2 gap-8'>
+      {
+        services.map((service, index) => (
+          <div class='service-card p-6 rounded-lg bg-white/10 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2'>
+            <div class='text-4xl mb-4'>{service.icon}</div>
+            <h3 class='text-xl font-semibold mb-3 text-white'>
+              {service.title}
+            </h3>
+            <p class='text-gray-300 text-base'>{service.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .service-card {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .service-card:nth-child(1) {
+    animation-delay: 0.2s;
+  }
+  .service-card:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+  .service-card:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+  .service-card:nth-child(4) {
+    animation-delay: 0.8s;
+  }
+</style>
