@@ -9,7 +9,7 @@ const hora = fecha.getHours();
       class='bg-black/10 border border-white/10 px-6 py-2 rounded-full flex justify-center items-center gap-2'
     >
       <div
-        class={`size-2  border-none rounded-full ${hora < 20 && hora > 4 ? 'bg-green-500' : 'bg-red-500'}`}
+        class={`size-2  border-none rounded-full ${hora < 20 || hora > 4 ? 'bg-green-500' : 'bg-red-500'}`}
       >
       </div>
       <span class='text-sm text-white'> Desarrollo Web</span>
